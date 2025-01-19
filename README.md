@@ -6,8 +6,8 @@ players to make informed decisions, improve strategies, and enhance their compet
 
 This project serves as a cornerstone for evaluating cricket performance metrics, offering users a 
 seamless experience in exploring trends, understanding strengths and weaknesses, and predicting future 
-outcomes based on historical data. Its versatile functionality is tailored to 
-meet the dynamic needs of cricket enthusiasts, coaches, and analysts alike.
+outcomes based on historical data. Its versatile functionality is tailored 
+to meet the dynamic needs of cricket enthusiasts, coaches, and analysts alike.
 
 ## Features
 
