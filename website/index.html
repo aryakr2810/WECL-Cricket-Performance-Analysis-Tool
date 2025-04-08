@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Player Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { padding: 20px; }
+        h2 { margin-top: 40px; }
+        .table { margin-bottom: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Cricket Player Dashboard</h1>
+        <p>
+            Established in 2018, the Windsor-Essex Cricket League (WECL) is dedicated to promoting cricket among youth,
+            international students, and newcomers in the community. As the league grows, it aims to adopt data-driven 
+            innovations to enhance player selection and game competitiveness. Currently, team selection is mostly 
+            subjective, making it difficult to identify top-performing players. This dashboard presents a performance-based 
+            system for evaluating and selecting players using machine learning and player statistics from the 2024 season.
+        </p>
+
+        <h2>Player Rankings 2024</h2>
+        <p>
+            The player rankings were extracted directly from the official WECL website using web scraping with the
+            <code>pandas.read_html()</code> function. These rankings provide the raw statistics used to build
+            performance evaluations in batting, bowling, and fielding, serving as the analytical foundation of the project.
+        </p>
+        {{ rankings|safe }}
+
+        <h2>Final Cricket Levels</h2>
+        <p>
+            To evaluate individual strengths, players were categorized into six performance levels for batting,
+            bowling, and fielding using median-based statistical analysis. This leveling system offers a structured,
+            unbiased framework to benchmark and compare player capabilities.
+        </p>
+        {{ final_levels|safe }}
+
+        <h2>Confidence Intervals</h2>
+        <p>
+            An XGBoost classifier was trained to predict the probability of each player fitting specific roles
+            such as Batter, Bowler, Fielder, All-Rounder, or Wicketkeeper. These confidence scores provide
+            an objective assessment of a player’s most likely role based on performance levels.
+        </p>
+        {{ confidence_intervals|safe }}
+
+        <h2>Dream 11 Team</h2>
+        <p>
+            The Dream 11 team was formed by selecting players with the highest confidence scores in each role,
+            ensuring a balanced squad. This approach supports fair and strategic decision-making in team selection,
+            aligning with WECL’s mission to embrace analytics for modern cricket management.
+        </p>
+        {{ dream_11|safe }}
+    </div>
+</body>
+</html>
+
+
